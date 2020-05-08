@@ -17,9 +17,9 @@ const reducer = (state = initialState, action) =>{
                 search: action.text,
             };
         case actionTypes.INIT_MOVIE_ID:
-            return{
+            return {
                 ...state,
-                selectedMoiveId: action.id
+                selectedMoiveId: action.movie_id
             };
 
         case actionTypes.SET_POPULAR_MOVIES:

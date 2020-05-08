@@ -7,22 +7,20 @@ import { connect } from 'react-redux'
 
 class Movie_list extends Component {
 
-    state = {
-        selectedMovieId: null 
-    }
+
 
     componentDidMount() {
         this.props.onInitPopularMovies();
     }
 
     movieClickedHandler = (id) => {
-        this.setState({selectedMovieId: id});
+        this.props.onMovieIdClick(id);
     } 
 
     render() {
-        let checkId = <p>Waiting for id</p>
-        if (this.state.selectedMovieId){
-            checkId = <p>Id is: {this.state.selectedMovieId}</p>
+
+        if (this.props.selectedMovieId){
+            console.log('Got this id: ' + this.props.selectedMovieId)
         }
 
         let movielist = <div>Loading movies</div>
@@ -38,13 +36,13 @@ class Movie_list extends Component {
                     base_url={this.props.base_url}
                     poster_size={this.props.poster_size}
                     clicked={() => this.movieClickedHandler(movie.id)}
+                    
                 />
             });
         }
        
         return (
             <div className='flex flex-wrap justify-center mx-40'>
-                {checkId}
                 {movielist}
             </div>
         )
@@ -66,7 +64,6 @@ const mapDispatchToProps = dispatch => {
         onInitTopRatedMovies: () => dispatch(actionTypes.initTopRatedMovies()),
         onInitUpcommingMovies: () => dispatch(actionTypes.initUpcommingMovies()),
         onMovieIdClick: (id) => dispatch({type: actionTypes.INIT_MOVIE_ID, movie_id: id}),
-        // onInitSearchedMovies: () => dispatch(actionTypes.initSearchedMovies())
     }
 }
 
