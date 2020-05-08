@@ -3,6 +3,7 @@ import * as actionTypes from './actions'
 const initialState = {
     search: '',
     movies: null,
+    selectedMoiveId: null,
 
     base_url: 'http://image.tmdb.org/t/p/',
     poster_size: 'w342',
@@ -14,6 +15,11 @@ const reducer = (state = initialState, action) =>{
             return {
                 ...state,
                 search: action.text,
+            };
+        case actionTypes.INIT_MOVIE_ID:
+            return{
+                ...state,
+                selectedMoiveId: action.id
             };
 
         case actionTypes.SET_POPULAR_MOVIES:

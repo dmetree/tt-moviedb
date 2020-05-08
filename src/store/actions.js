@@ -3,6 +3,7 @@ import axios from 'axios'
 
 
 export const FILTER_BY_VALUE = 'FILTER_BY_VALUE'
+export const INIT_MOVIE_ID = 'INIT_MOVIE_ID'
 export const SET_POPULAR_MOVIES = 'SET_POPULAR_MOVIES'
 export const SET_TOP_RATED_MOVIES = 'SET_TOP_RATED_MOVIES'
 export const SET_UPCOMMING_MOVIES = 'SET_UPCOMMING_MOVIES'
@@ -95,10 +96,8 @@ export const setSearchedMovies = (movies) => {
 }
 
 
-
 export const initSearchedMovies = (query) => {
     let SEARCH_QUERY = query
-    // SEARCH_QUERY = 'one'
     return dispatch => {
         axios.get(SEARCH_BASE + API_KEY + LANG_Q + SEARCH_QUERY + SEARCH_TAIL)
             .then(response => {
@@ -109,6 +108,8 @@ export const initSearchedMovies = (query) => {
             });
     }
 }
+
+
 
 
 

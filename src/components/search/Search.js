@@ -14,7 +14,7 @@ class Search extends Component {
     render() {
         return (
             <div className="py-10">
-                <div className="flex justify-between bg-gray-600 rounded-full px-5 mx-40">
+                <div className="flex justify-between bg-gray-600 rounded-full pl-5 mx-40">
                     <input 
                     className="bg-transparent outline-none text-3xl"  
                     placeholder="Search for a movie..." type="text"
