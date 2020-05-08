@@ -7716,6 +7716,10 @@ video {
   outline: 0;
 }
 
+.active\:outline-none:active {
+  outline: 0;
+}
+
 .overflow-auto {
   overflow: auto;
 }
@@ -21451,6 +21455,10 @@ video {
   }
 
   .sm\:focus\:outline-none:focus {
+    outline: 0;
+  }
+
+  .sm\:active\:outline-none:active {
     outline: 0;
   }
 
@@ -35193,6 +35201,10 @@ video {
     outline: 0;
   }
 
+  .md\:active\:outline-none:active {
+    outline: 0;
+  }
+
   .md\:overflow-auto {
     overflow: auto;
   }
@@ -48932,6 +48944,10 @@ video {
     outline: 0;
   }
 
+  .lg\:active\:outline-none:active {
+    outline: 0;
+  }
+
   .lg\:overflow-auto {
     overflow: auto;
   }
@@ -62668,6 +62684,10 @@ video {
   }
 
   .xl\:focus\:outline-none:focus {
+    outline: 0;
+  }
+
+  .xl\:active\:outline-none:active {
     outline: 0;
   }
 

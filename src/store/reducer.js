@@ -4,9 +4,6 @@ const initialState = {
     search: '',
     movies: null,
 
-
-
-
     base_url: 'http://image.tmdb.org/t/p/',
     poster_size: 'w342',
 }
@@ -22,16 +19,19 @@ const reducer = (state = initialState, action) =>{
         case actionTypes.SET_POPULAR_MOVIES:
             return {
                 ...state,
+                search: '',
                 movies: action.movies
             };
         case actionTypes.SET_TOP_RATED_MOVIES:
             return {
                 ...state,
+                search: '',
                 movies: action.movies
             };
         case actionTypes.SET_UPCOMMING_MOVIES:
             return {
                 ...state,
+                search: '',
                 movies: action.movies
             };
         case actionTypes.SET_SEARCHED_MOVIES:

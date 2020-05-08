@@ -21,8 +21,9 @@ const URL_TAIL = '&language=en-US&page=1'
 const SEARCH_BASE = 'https://api.themoviedb.org/3/search/movie'
 const LANG_Q = '&language=en-US&query='
 
-let SEARCH_QUERY = 'last' 
+// let SEARCH_QUERY = 'last' 
 const SEARCH_TAIL = '&page=1&include_adult=true'
+
 
 
 export const setPopularMovies = (movies) => {
@@ -94,15 +95,20 @@ export const setSearchedMovies = (movies) => {
 }
 
 
-export const initSearchedMovies = () => {
+
+export const initSearchedMovies = (query) => {
+    let SEARCH_QUERY = query
+    // SEARCH_QUERY = 'one'
     return dispatch => {
         axios.get(SEARCH_BASE + API_KEY + LANG_Q + SEARCH_QUERY + SEARCH_TAIL)
-        .then(response => {
-            dispatch(setSearchedMovies(response.data.results))
-        })
-        .catch(error => {
-            console.log('An error while getting data!')
-        });
+            .then(response => {
+                dispatch(setSearchedMovies(response.data.results))
+            })
+            .catch(error => {
+                console.log('An error while getting data!')
+            });
     }
 }
+
+
 
