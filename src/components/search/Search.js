@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import { NavLink } from 'react-router-dom';
 
 import * as actionTypes from '../../store/actions'
 
@@ -8,7 +9,14 @@ class Search extends Component {
 
     searchHandler = (event) => {
         event.preventDefault();
+        this.props.history.push('/')
         this.props.onInitSearchedMovies(this.props.searchText);
+    }
+    _handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            this.props.history.push('/')
+            this.props.onInitSearchedMovies(this.props.searchText);
+        }
     }
 
     render() {
@@ -16,13 +24,15 @@ class Search extends Component {
             <div className="py-10">
                 <div className="flex justify-between bg-gray-600 rounded-full pl-5 mx-40">
                     <input 
-                    className="bg-transparent outline-none text-3xl"  
+                    className="bg-transparent outline-none text-3xl w-4/5"  
                     placeholder="Search for a movie..." type="text"
                         value={this.props.searchText}
-                        onChange={this.props.newSearch} />
+                        onChange={this.props.newSearch} 
+                        onKeyDown={this._handleKeyDown}/>
                     <button
                         onClick={this.searchHandler}
-                        className="outline-none px-10 rounded-full bg-red-800">GO
+                        className="outline-none px-10 rounded-full bg-red-800">
+                        <NavLink to="/">Go</NavLink>
                     </button>
                 </div>
             </div>

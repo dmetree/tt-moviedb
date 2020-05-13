@@ -10,11 +10,16 @@ class Movie_list extends Component {
 
 
     componentDidMount() {
-        this.props.onInitPopularMovies();
+        if (this.props.movies === null){
+            this.props.onInitPopularMovies();
+        }
     }
 
     movieClickedHandler = (id) => {
-        this.props.onMovieIdClick(id);
+        this.props.onMovieIdClick(id)
+        this.props.onGoToMovie(id)
+        this.props.onGetSimilar(id)
+        this.props.history.push('/movie_details');
     } 
 
     render() {
@@ -36,7 +41,6 @@ class Movie_list extends Component {
                     base_url={this.props.base_url}
                     poster_size={this.props.poster_size}
                     clicked={() => this.movieClickedHandler(movie.id)}
-                    
                 />
             });
         }
@@ -64,6 +68,8 @@ const mapDispatchToProps = dispatch => {
         onInitTopRatedMovies: () => dispatch(actionTypes.initTopRatedMovies()),
         onInitUpcommingMovies: () => dispatch(actionTypes.initUpcommingMovies()),
         onMovieIdClick: (id) => dispatch({type: actionTypes.INIT_MOVIE_ID, movie_id: id}),
+        onGoToMovie: (id) => dispatch(actionTypes.initMovieById(id)),
+        onGetSimilar: (id) => dispatch(actionTypes.initSimilarMovies(id))
     }
 }
 
