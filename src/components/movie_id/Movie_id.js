@@ -17,7 +17,7 @@ class Movie_id extends Component {
         if (this.props.movieDetails) {
             movieDetails =
                 <div className="flex  justify-center items-center  flex-col md:flex-row m-2 md:mx-10">
-                <img className="flex h-auto m-2  w-1/2 md:w-1/3"
+                <img className="flex h-auto m-2  w-full md:w-1/3"
                         src={this.props.base_url + this.props.poster_size + this.props.movieDetails.poster_path}
                         alt="poster" />
                 <div className="flex flex-col justify-center m-2 w-full md:w-1/2">

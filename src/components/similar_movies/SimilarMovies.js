@@ -1,18 +1,30 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
+// import Slider from "react-slick";
+
+
+
 import * as actionTypes from '../../store/actions'
 import MovieListItem from './../movie_list/Movie_list_item'
 
 class SimilarMovies extends Component {
-   
+
     movieClickedHandler = (id) => {
         this.props.onMovieIdClick(id)
         this.props.onGoToMovie(id)
         this.props.onGetSimilar(id)
-    } 
+    }
 
     render() {
+        var settings = {
+            dots: false,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        };
+
 
         let similarMovieList = <div>Loading movies</div>
 
@@ -30,9 +42,9 @@ class SimilarMovies extends Component {
                 />
             });
         }
-        
+
         return (
-            <div className="flex flex-wrap justify-center mx-40">
+            <div className="flex flex-wrap justify-center mx-8 md:mx-20 lg:mx-40">
                 {similarMovieList}
             </div>
         )
