@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/tt-moviedb/static/css/main.bc292606.chunk.css",
-    "main.js": "/tt-moviedb/static/js/main.0a152f9f.chunk.js",
-    "main.js.map": "/tt-moviedb/static/js/main.0a152f9f.chunk.js.map",
+    "main.js": "/tt-moviedb/static/js/main.d2c3e5b7.chunk.js",
+    "main.js.map": "/tt-moviedb/static/js/main.d2c3e5b7.chunk.js.map",
     "runtime-main.js": "/tt-moviedb/static/js/runtime-main.e8ba9139.js",
     "runtime-main.js.map": "/tt-moviedb/static/js/runtime-main.e8ba9139.js.map",
     "static/js/2.bebceb93.chunk.js": "/tt-moviedb/static/js/2.bebceb93.chunk.js",
     "static/js/2.bebceb93.chunk.js.map": "/tt-moviedb/static/js/2.bebceb93.chunk.js.map",
     "index.html": "/tt-moviedb/index.html",
-    "precache-manifest.bde7b589164ac9a6ebff28ff7da5bead.js": "/tt-moviedb/precache-manifest.bde7b589164ac9a6ebff28ff7da5bead.js",
+    "precache-manifest.291f46ef6bce661cde83ecda5e262c14.js": "/tt-moviedb/precache-manifest.291f46ef6bce661cde83ecda5e262c14.js",
     "service-worker.js": "/tt-moviedb/service-worker.js",
     "static/css/main.bc292606.chunk.css.map": "/tt-moviedb/static/css/main.bc292606.chunk.css.map",
     "static/js/2.bebceb93.chunk.js.LICENSE.txt": "/tt-moviedb/static/js/2.bebceb93.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.e8ba9139.js",
     "static/js/2.bebceb93.chunk.js",
     "static/css/main.bc292606.chunk.css",
-    "static/js/main.0a152f9f.chunk.js"
+    "static/js/main.d2c3e5b7.chunk.js"
   ]
 }
