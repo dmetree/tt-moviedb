@@ -16,15 +16,15 @@ class Movie_id extends Component {
         let movieDetails = null
         if (this.props.movieDetails) {
             movieDetails =
-                <div className="flex justify-center items-center">
-                    <img className="w-1/3 h-auto m-2"
+                <div className="flex  justify-center items-center  flex-col md:flex-row m-2 md:mx-10">
+                <img className="flex h-auto m-2  w-1/2 md:w-1/3"
                         src={this.props.base_url + this.props.poster_size + this.props.movieDetails.poster_path}
                         alt="poster" />
-                    <div className="m-2">
-                        <h3 className='text-3xl w-64'>{this.props.movieDetails.original_title}</h3>
-                        <h4 className="text-1xl w-64">- "{this.props.movieDetails.tagline}"</h4>
+                <div className="flex flex-col justify-center m-2 w-full md:w-1/2">
+                        <h3 className='text-3xl m-2 w-full '>{this.props.movieDetails.original_title}</h3>
+                        <h4 className="text-1xl m-2 w-full ">- "{this.props.movieDetails.tagline}"</h4>
                         <div className="p-5">{this.props.movieDetails.vote_average}</div>
-                        <p className="w-64 text-lg">{this.props.movieDetails.overview}</p>
+                        <p className="text-lg w-full ">{this.props.movieDetails.overview}</p>
                     </div>
                 </div>
         }
@@ -32,7 +32,7 @@ class Movie_id extends Component {
         return (
             <div>
                 {movieDetails}
-                <SimilarMovies/>
+                <SimilarMovies />
             </div>
         )
     }

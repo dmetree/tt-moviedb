@@ -8,7 +8,6 @@ import { connect } from 'react-redux'
 class Movie_list extends Component {
 
 
-
     componentDidMount() {
         if (this.props.movies === null){
             this.props.onInitPopularMovies();
@@ -46,7 +45,7 @@ class Movie_list extends Component {
         }
        
         return (
-            <div className='flex flex-wrap justify-center mx-40'>
+            <div className='flex flex-wrap justify-center mx-8 md:mx-20 lg:mx-40'>
                 {movielist}
             </div>
         )

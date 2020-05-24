@@ -5,7 +5,7 @@ function Movie_list_item(props) {
         <div className='flex flex-col flex-wrap justify-between w-64 m-2' >
             
             <img
-                className="w-64 h-auto" 
+                className=" h-auto  w-64 " 
                 src={props.base_url+props.poster_size+props.poster} 
                 alt="poster"
                 onClick={props.clicked}/>

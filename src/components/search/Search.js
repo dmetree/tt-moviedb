@@ -21,17 +21,17 @@ class Search extends Component {
 
     render() {
         return (
-            <div className="py-10">
-                <div className="flex justify-between bg-gray-600 rounded-full pl-5 mx-40">
+            <div className="py-5 md:py-10">
+                <div className="flex justify-between bg-gray-600 rounded-full pl-5   mx-8 md:mx-40 lg:mx-64">
                     <input 
-                    className="bg-transparent outline-none text-3xl w-4/5"  
+                        className="bg-transparent outline-none w-4/5 p-2  text-base md:text-3xl"  
                     placeholder="Search for a movie..." type="text"
                         value={this.props.searchText}
                         onChange={this.props.newSearch} 
                         onKeyDown={this._handleKeyDown}/>
                     <button
                         onClick={this.searchHandler}
-                        className="outline-none px-10 rounded-full bg-red-800">
+                        className="outline-none rounded-full bg-red-800  px-5 md:px-10  text-base md:text-3xl">
                         <NavLink to="/">Go</NavLink>
                     </button>
                 </div>
