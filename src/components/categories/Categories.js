@@ -22,15 +22,15 @@ class Categories extends Component {
 
     render() {
         return (
-            <div className="flex justify-center flex-col md:flex-row">
+            <div className="flex justify-center flex-row">
                 <button 
-                    className="outline-none py-1 m-1 rounded-full bg-gray-600  px-5 md:px-10  mx-8 md:mx-2" 
+                    className="focus:outline-none outline-none py-1 m-1 rounded-full bg-gray-600  mx-1 px-4 md:px-10  text-sm md:text-xl" 
                     onClick={this.popularClickHandler}>Popular</button>
                 <button 
-                    className="outline-none py-1 m-1 rounded-full bg-gray-600  px-5 md:px-10  mx-8 md:mx-2" 
+                    className="focus:outline-none outline-none py-1 m-1 rounded-full bg-gray-600  mx-1 px-4 md:px-10  text-sm md:text-xl" 
                     onClick={this.topRatedClickHandler}>Top Rated</button>
                 <button
-                    className="outline-none py-1 m-1 rounded-full bg-gray-600  px-5 md:px-10  mx-8 md:mx-2"
+                    className="focus:outline-none outline-none py-1 m-1 rounded-full bg-gray-600  mx-1 px-4 md:px-10  text-sm md:text-xl"
                     onClick={this.upcommingClickHandler}>Upcomming</button>
             </div>
         )

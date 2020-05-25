@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-// import Slider from "react-slick";
+import Slider from "react-slick";
 
 
 
@@ -31,7 +31,7 @@ class SimilarMovies extends Component {
         if (this.props.similarMovies) {
             similarMovieList = this.props.similarMovies.map(movie => {
                 return <MovieListItem
-                    key={movie.id}
+                    key = { movie.id }
                     title={movie.title}
                     releasedate={movie.release_date}
                     vote={movie.vote_average}

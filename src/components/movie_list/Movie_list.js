@@ -45,7 +45,7 @@ class Movie_list extends Component {
         }
        
         return (
-            <div className='flex flex-wrap justify-center mx-8 md:mx-20 lg:mx-40'>
+            <div className='flex flex-wrap justify-center mx-2 md:mx-20 lg:mx-40'>
                 {movielist}
             </div>
         )

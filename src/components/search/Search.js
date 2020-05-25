@@ -22,7 +22,7 @@ class Search extends Component {
     render() {
         return (
             <div className="py-5 md:py-10">
-                <div className="flex justify-between bg-gray-600 rounded-full pl-5   mx-8 md:mx-40 lg:mx-64">
+                <div className="flex justify-between bg-gray-600 rounded-full pl-5   mx-2 md:mx-20 lg:mx-40">
                     <input 
                         className="bg-transparent outline-none w-4/5 p-2  text-base md:text-3xl"  
                     placeholder="Search for a movie..." type="text"
