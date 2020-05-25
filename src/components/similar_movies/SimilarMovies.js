@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 
 import * as actionTypes from '../../store/actions'
-import MovieListItem from './../movie_list/Movie_list_item'
 
 class SimilarMovies extends Component {
 
@@ -21,32 +22,64 @@ class SimilarMovies extends Component {
             dots: false,
             infinite: true,
             speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToShow: 8,
+            slidesToScroll: 7,
+            arrows: false,
+            autoplay: true,
+            autoplaySpeed: 4000,
+            responsive: [
+                {
+                    breakpoint: 1024,
+                    settings: {
+                        slidesToShow: 5,
+                        slidesToScroll: 4,
+                        infinite: true,
+                    }
+                },
+                {
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 4,
+                        slidesToScroll: 3
+                    }
+                }
+            ]
         };
-
 
         let similarMovieList = <div>Loading movies</div>
 
         if (this.props.similarMovies) {
             similarMovieList = this.props.similarMovies.map(movie => {
-                return <MovieListItem
-                    key = { movie.id }
-                    title={movie.title}
-                    releasedate={movie.release_date}
-                    vote={movie.vote_average}
-                    poster={movie.poster_path}
-                    base_url={this.props.base_url}
-                    poster_size={this.props.poster_size}
-                    clicked={() => this.movieClickedHandler(movie.id)}
-                />
+                return <div
+                    key={movie.id}
+                    className="focus:outline-none outline-none">
+                    <img
+                        className=" h-auto w-full"
+                        src={this.props.base_url + this.props.poster_size + movie.poster_path}
+                        alt="poster"
+                        onClick={() => this.movieClickedHandler(movie.id)} />
+
+                </div>
+                // title={movie.title}
+                // releasedate={movie.release_date}
+                // vote={movie.vote_average}
+                // poster = { movie.poster_path }
+                // base_url = { this.props.base_url }
+                // poster_size = { this.props.poster_size }
+                // clicked = {() => this.movieClickedHandler(movie.id)
+                // }
             });
         }
 
         return (
-            <div className="flex flex-wrap justify-center mx-8 md:mx-20 lg:mx-40">
+            // <div className="flex flex-wrap justify-center mx-2 md:mx-20 lg:mx-40">
+            //     {similarMovieList}
+            // </div>
+            <Slider {...settings}>
+
                 {similarMovieList}
-            </div>
+
+            </Slider>
         )
     }
 }

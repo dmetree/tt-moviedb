@@ -2,10 +2,16 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 import SimilarMovies from './../similar_movies/SimilarMovies'
+// import SimilarSlider from './../similar_movies/SimilarSlider'
 
 import * as actionTypes from '../../store/actions'
 
 class Movie_id extends Component {
+
+    componentDidMount() {
+        window.scrollTo(0, 0)
+    }
+
 
     goBackHandler = () => {
         this.props.initGoBackHandler()
@@ -32,7 +38,9 @@ class Movie_id extends Component {
         return (
             <div>
                 {movieDetails}
-                <SimilarMovies />
+                <div className="mx-2">Similar Movies:</div>
+                <SimilarMovies/>
+                {/* <SimilarSlider/> */}
             </div>
         )
     }
